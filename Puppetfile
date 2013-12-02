@@ -55,3 +55,17 @@ github "xquartz",    "1.1.0"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
+
+github "redis",           "2.1.0"
+github "dropbox",         "1.2.0"
+github "postgresql",      "2.2.0"
+github "memcached",       "1.4.0"
+github "elasticsearch",   "2.1.0"
+github "alfred",          "1.1.7"
+github "heroku",          "2.1.1"
+github "firefox",         "1.1.5"
+github "chrome",          "1.1.2"
+github "python",          "1.3.0"
+github "vlc",             "1.0.5"
+github "cyberduck",       "1.0.1"
+github "appcleaner",      "1.0.0"
