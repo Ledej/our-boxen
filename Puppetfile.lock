@@ -79,6 +79,11 @@ GITHUBTARBALL
     hub (1.0.3)
 
 GITHUBTARBALL
+  remote: boxen/puppet-java
+  specs:
+    java (1.1.2)
+
+GITHUBTARBALL
   remote: boxen/puppet-memcached
   specs:
     memcached (1.4.0)
@@ -181,6 +186,7 @@ DEPENDENCIES
   homebrew (= 1.5.1)
   hub (= 1.0.3)
   inifile (= 1.0.0)
+  java (= 1.1.2)
   memcached (= 1.4.0)
   nginx (= 1.4.2)
   nodejs (= 3.3.0)
