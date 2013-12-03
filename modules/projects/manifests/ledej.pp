@@ -8,7 +8,7 @@ class projects::ledej {
     elasticsearch => true,
     postgresql    => true,
     redis         => true,
-    python        => '2.7.5',
-    source        => 'ledej/ledej-website'
+    # python        => '2.7.5',
+    source        => 'Ledej/ledej-website'
   }
 }
