@@ -13,6 +13,7 @@ class projects::ledej {
   include firefox
   include hipchat
   include dropbox
+  include cyberduck
 
   python::mkvirtualenv{ 'venv':
     ensure      => present,
