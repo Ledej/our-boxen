@@ -17,16 +17,21 @@ class projects::ledej {
     virtualenv   => 'venv',
   }
 
-  python::pip { 'numpy':
-    ensure     => present,
-    virtualenv => $python::config::global_venv
+  # python::pip { 'numpy':
+  #   ensure     => present,
+  #   virtualenv => $python::config::global_venv
+  # }
+  package { 'numpy':
+    ensure => present,
+    provider => pip;
   }
 
   package { 
     'geos':
       ensure => present;
     'gdal':
-      ensure => present;
+      ensure => present,
+      require => Package['numpy'];
   }
 
   boxen::project { 'ledej':
