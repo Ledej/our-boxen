@@ -13,7 +13,7 @@ class projects::ledej {
   }
 
   python::requirements { 'reqs-dev':
-    requirements => '/Users/peteralaoui/src/ledej/reqs/dev.txt',
+    requirements => '/Users/${::luser}/src/ledej/reqs/dev.txt',
     virtualenv   => 'venv',
   }
 
