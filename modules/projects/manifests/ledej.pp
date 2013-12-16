@@ -1,9 +1,17 @@
 class projects::ledej {
+  include heroku
   include redis
   include postgresql
   include elasticsearch
   include python
   include python::virtualenvwrapper
+  include nodejs
+
+  # extra
+  include chrome
+  include firefox
+  include hipchat
+  include dropbox
 
   python::mkvirtualenv{ 'venv':
     ensure      => present,
@@ -13,8 +21,9 @@ class projects::ledej {
   }
 
   python::requirements { 'reqs-dev':
-    requirements => '/Users/${::luser}/src/ledej/reqs/dev.txt',
+    requirements => "/Users/${::luser}/src/ledej/reqs/dev.txt",
     virtualenv   => 'venv',
+    require      => Package['libjpeg'],
   }
 
   # python::pip { 'numpy':
@@ -32,6 +41,23 @@ class projects::ledej {
     'gdal':
       ensure => present,
       require => Package['numpy'];
+    'rabbitmq':
+      ensure => present;
+    'libjpeg':
+      ensure => present;
+
+    'git-flow':
+      ensure => present;  
+  }
+
+  package {
+    'kicker':
+      ensure => present,
+      provider => 'gem' 
+  }
+
+  nodejs::module { 'sass':
+    node_version => 'v0.10'
   }
 
   boxen::project { 'ledej':

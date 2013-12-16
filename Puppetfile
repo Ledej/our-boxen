@@ -58,6 +58,7 @@ github "xquartz",    "1.1.0"
 
 github "redis",           "2.1.0"
 github "dropbox",         "1.2.0"
+github "hipchat",         "1.1.0"
 github "sysctl",          "1.0.0"
 github "postgresql",      "2.2.0"
 github "memcached",       "1.4.0"
