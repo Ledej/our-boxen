@@ -38,11 +38,10 @@ class projects::ledej {
   }
 
   package { 
-    'geos':
-      ensure => present;
     'gdal':
       ensure => present,
       require => Package['numpy'];
+
     'rabbitmq':
       ensure => present;
     'libjpeg':
@@ -55,7 +54,10 @@ class projects::ledej {
   package {
     'kicker':
       ensure => present,
-      provider => 'gem' 
+      provider => 'gem';
+    'foreman':
+      ensure => present,
+      provider => 'gem';
   }
 
   nodejs::module { 'sass':
