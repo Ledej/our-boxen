@@ -16,6 +16,7 @@ class projects::ledej {
   include cyberduck
 
   python::mkvirtualenv{ 'venv':
+    require     => Package['python'],
     ensure      => present,
     systempkgs  => false,
     distribute  => true,
@@ -41,7 +42,7 @@ class projects::ledej {
       'htop-osx',
       'go',
       'python',
-      'redis',
+      # 'redis',
     ]:
     ensure => present,
   }
@@ -52,22 +53,13 @@ class projects::ledej {
       'kicker',
       'foreman',
     ]:
-    ensure => present
+    ensure => present,
+    provider => gem,
   }
 
   # Node packages
   nodejs::module { 'sass':
     node_version => 'v0.10'
-  }
-
-  package {
-    [
-      'htop-osx',
-      'go',
-      'python',
-      'redis',
-    ]:
-    ensure => present,
   }
 
   # Python packages
@@ -90,7 +82,8 @@ class projects::ledej {
     elasticsearch => true,
     postgresql    => true,
     redis         => true,
+    # python        => '2.7.4',
     source        => 'Ledej/ledej-website',
-    require      => Package['libjpeg'],
+    require       => Package['libjpeg'],
   }
 }
