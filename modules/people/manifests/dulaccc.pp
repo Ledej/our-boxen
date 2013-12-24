@@ -5,7 +5,7 @@ class people::dulaccc {
   include firefox
   include git
   include hub
-  include spotify
+  # include spotify
   include sublime_text_2
 
   # include projects::deployment
