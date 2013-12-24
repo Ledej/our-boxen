@@ -23,45 +23,66 @@ class projects::ledej {
   }
 
   python::requirements { 'reqs-dev':
-    requirements => "/Users/${::luser}/src/ledej/reqs/dev.txt",
+    requirements => "/Users/${::boxen_user}/src/ledej/reqs/dev.txt",
     virtualenv   => 'venv',
     require      => Package['libjpeg'],
   }
 
-  # python::pip { 'numpy':
-  #   ensure     => present,
-  #   virtualenv => $python::config::global_venv
-  # }
-  package { 'numpy':
+  # Homebrew packages
+  package { 'gdal':
+    require => Package['numpy'],
     ensure => present,
-    provider => pip;
+  }
+  package {
+    [
+      'rabbitmq',
+      'libjpeg',
+      'git-flow',
+      'htop-osx',
+      'go',
+      'python',
+      'redis',
+    ]:
+    ensure => present,
   }
 
-  package { 
-    'gdal':
-      ensure => present,
-      require => Package['numpy'];
+  # Gem packages
+  package {
+    [
+      'kicker',
+      'foreman',
+    ]:
+    ensure => present
+  }
 
-    'rabbitmq':
-      ensure => present;
-    'libjpeg':
-      ensure => present;
-
-    'git-flow':
-      ensure => present;  
+  # Node packages
+  nodejs::module { 'sass':
+    node_version => 'v0.10'
   }
 
   package {
-    'kicker':
-      ensure => present,
-      provider => 'gem';
-    'foreman':
-      ensure => present,
-      provider => 'gem';
+    [
+      'htop-osx',
+      'go',
+      'python',
+      'redis',
+    ]:
+    ensure => present,
   }
 
-  nodejs::module { 'sass':
-    node_version => 'v0.10'
+  # Python packages
+  package { 'numpy':
+    ensure => present,
+    provider => pip,
+  }
+  package {
+    [
+      'virtualenv',
+      'virtualenvwrapper',
+    ]:
+    require => Package['python'],
+    ensure => present,
+    provider => pip,
   }
 
   boxen::project { 'ledej':
@@ -70,5 +91,6 @@ class projects::ledej {
     postgresql    => true,
     redis         => true,
     source        => 'Ledej/ledej-website',
+    require      => Package['libjpeg'],
   }
 }
