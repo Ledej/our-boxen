@@ -12,10 +12,28 @@ class people::dulaccc {
   include projects::ledej
 
 
-  $home = "/Users/${::luser}"
+  $home = "/Users/${::boxen_user}"
   $projects = "${home}/Projects"
+  $srcdir = "${boxen::config::srcdir}}"
 
+  file { $srcdir:
+    ensure  => directory,
+  }
   file { $projects:
     ensure => directory,
+  }
+
+  $dotfiles = "${srcdir}/dotfiles"
+
+  repository { $dotfiles:
+    source  => 'dulaccc/dotfiles',
+    require => File[$srcdir],
+    notify  => Exec['install-dotfiles'],
+  }
+
+  exec { "install-dotfiles":
+    cwd         => $dotfiles,
+    command     => "make",
+    refreshonly => true
   }
 }

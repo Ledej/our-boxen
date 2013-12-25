@@ -39,6 +39,13 @@ class people::copy_me_to_your_github_username {
   ## Here's how to include a personal github project
   #repository { "${boxen::config::srcdir}/dotfiles":
   #  source  => 'yourusername/dotfiles',
+  #  notify  => Exec['install-dotfiles'],
+  #}
+  #
+  #exec { "install-dotfiles":
+  #  cwd         => $dotfiles,
+  #  command     => "make",
+  #  refreshonly => true
   #}
 
   ## This is how to install Homebrew packages
