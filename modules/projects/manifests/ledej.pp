@@ -51,16 +51,23 @@ class projects::ledej {
   class { 'ruby::global': version => '1.9.3' }
 
   # Gem packages
-  ruby::gem { 'kicker for 1.9.3':
+  $ruby_version = "1.9.3"
+  ruby::gem { 'kicker for ${ruby_version}':
     gem     => 'kicker',
-    ruby    => '1.9.3',
+    ruby    => $ruby_version,
     version => '~> 3.0.0',
     ensure  => present,
   }
-  ruby::gem { 'foreman for 1.9.3':
+  ruby::gem { 'foreman for ${ruby_version}':
     gem     => 'foreman',
-    ruby    => '1.9.3',
+    ruby    => $ruby_version,
     version => '~> 0.63.0',
+    ensure  => present,
+  }
+  ruby::gem { 'sass for ${ruby_version}':
+    gem     => 'sass',
+    ruby    => $ruby_version,
+    version => '~> 3.2.13',
     ensure  => present,
   }
 
@@ -69,9 +76,9 @@ class projects::ledej {
   class { 'nodejs::global': version => 'v0.10' }
 
   # Node packages
-  nodejs::module { 'sass':
-    node_version => 'v0.10'
-  }
+  # nodejs::module { 'sass':
+  #   node_version => 'v0.10'
+  # }
 
   # Python packages
   package { 'numpy':
