@@ -1,7 +1,5 @@
 # Change "copy_me_to_your_github_username" to your actual github username
 class people::copy_me_to_your_github_username {
-  # This gives you the tools and repos to make a development VM
-  include gds-development
   ## Remove the # from any of the below to install that software
   #include nvm
   #include alfred
@@ -31,10 +29,10 @@ class people::copy_me_to_your_github_username {
   #include zsh)
 
   ## See modules/teams/manifests for things you can include here
-  #include teams::infrastructure
+  #include teams::mainstream
 
   ## You can also include particular projects from modules/projects/manifests
-  #include projects::deployment
+  #include projects::new-existing-project
 
   ## Here's how to include a personal github project
   ## Inspiration can be taken from http://github.com/dulaccc/dotfiles

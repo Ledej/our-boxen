@@ -8,17 +8,15 @@ class people::dulaccc {
   # include spotify
   include sublime_text_2
 
-  # include projects::deployment
+  include teams::mainstream
+
   include projects::ledej
 
 
   $home = "/Users/${::boxen_user}"
   $projects = "${home}/Projects"
-  $srcdir = "${boxen::config::srcdir}}"
+  $srcdir = "${boxen::config::srcdir}"
 
-  file { $srcdir:
-    ensure  => directory,
-  }
   file { $projects:
     ensure => directory,
   }
@@ -27,7 +25,10 @@ class people::dulaccc {
 
   repository { $dotfiles:
     source  => 'dulaccc/dotfiles',
-    require => File[$srcdir],
+    require => [
+      File[$srcdir],
+      Exec["install-default-dotfiles"],
+    ],
     notify  => Exec['install-dotfiles'],
   }
 

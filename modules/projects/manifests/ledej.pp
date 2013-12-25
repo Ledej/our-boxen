@@ -15,17 +15,21 @@ class projects::ledej {
   include dropbox
   include cyberduck
 
-  python::mkvirtualenv{ 'venv':
+  $project_name = 'ledej'
+  $project_dir = "${boxen::config::srcdir}/${project_name}"
+  $venv_name = 'ledej'
+
+  python::mkvirtualenv{ $venv_name:
     require     => Package['python'],
     ensure      => present,
     systempkgs  => false,
     distribute  => true,
-    project_dir => "~/src/ledej",
+    project_dir => $project_dir,
   }
 
   python::requirements { 'reqs-dev':
-    requirements => "/Users/${::boxen_user}/src/ledej/reqs/dev.txt",
-    virtualenv   => 'venv',
+    requirements => "${project_dir}/reqs/dev.txt",
+    virtualenv   => $venv_name,
     require      => Package['libjpeg'],
   }
 
@@ -95,7 +99,7 @@ class projects::ledej {
     provider => pip,
   }
 
-  boxen::project { 'ledej':
+  boxen::project { $project_name:
     # dotenv        => true,
     elasticsearch => true,
     postgresql    => true,
