@@ -88,6 +88,9 @@ class projects::ledej {
     redis         => true,
     # python        => '2.7.4',
     source        => 'Ledej/ledej-website',
-    require       => Package['libjpeg'],
+    require       => [
+      Package['libjpeg'],
+      Service['postgresql'],
+    ]
   }
 }
