@@ -37,6 +37,7 @@ class people::copy_me_to_your_github_username {
   #include projects::deployment
 
   ## Here's how to include a personal github project
+  ## Inspiration can be taken from http://github.com/dulaccc/dotfiles
   #repository { "${boxen::config::srcdir}/dotfiles":
   #  source  => 'yourusername/dotfiles',
   #  notify  => Exec['install-dotfiles'],
