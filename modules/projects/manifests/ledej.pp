@@ -58,6 +58,7 @@ class projects::ledej {
   }
 
   # Default NodeJS version
+  include nodejs::v0_10
   class { 'nodejs::global': version => 'v0.10' }
 
   # Node packages
