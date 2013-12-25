@@ -57,6 +57,9 @@ class projects::ledej {
     provider => gem,
   }
 
+  # Default NodeJS version
+  class { 'nodejs::global': version => 'v0.10' }
+
   # Node packages
   nodejs::module { 'sass':
     node_version => 'v0.10'
