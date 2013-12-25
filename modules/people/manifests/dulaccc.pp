@@ -36,4 +36,10 @@ class people::dulaccc {
     command     => "make",
     refreshonly => true
   }
+
+  # override the git global config
+  Git::Config::Global <| title == 'core.excludesfile' |> {
+    value   => "~/.gitignore_global",
+    require => Exec["install-dotfiles"]
+  }
 }
