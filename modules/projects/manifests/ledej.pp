@@ -47,14 +47,21 @@ class projects::ledej {
     ensure => present,
   }
 
+  # Default Ruby version
+  class { 'ruby::global': version => '1.9.3' }
+
   # Gem packages
-  package {
-    [
-      'kicker',
-      'foreman',
-    ]:
-    ensure => present,
-    provider => gem,
+  ruby::gem { 'kicker for 1.9.3':
+    gem     => 'kicker',
+    ruby    => '1.9.3',
+    version => '~> 3.0.0',
+    ensure  => present,
+  }
+  ruby::gem { 'foreman for 1.9.3':
+    gem     => 'foreman',
+    ruby    => '1.9.3',
+    version => '~> 0.63.0',
+    ensure  => present,
   }
 
   # Default NodeJS version
