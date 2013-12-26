@@ -21,6 +21,9 @@ class people::dulaccc {
     ensure => directory,
   }
 
+  ## 
+  # Dotfiles
+
   $dotfiles = "${srcdir}/dotfiles"
 
   repository { $dotfiles:
@@ -43,4 +46,25 @@ class people::dulaccc {
     value   => "~/.gitignore_global",
     require => Exec["install-dotfiles"]
   }
+
+  ##
+  # OSX preferences
+
+  Boxen::Osx_defaults {
+    user => $::boxen_user,
+  }
+
+  # osx::recovery_message { 'Si vous trouvez ce Mac, appelez le 06 67 20 77 93': }
+
+  include osx::dock::autohide
+  include osx::finder::show_external_hard_drives_on_desktop
+  include osx::finder::unhide_library
+  include osx::universal_access::ctrl_mod_zoom
+  include osx::disable_app_quarantine
+  include osx::no_network_dsstores
+
+  include osx::global::natural_mouse_scrolling
+  # class { 'osx::global::natural_mouse_scrolling':
+  #   enabled => false
+  # }
 }
