@@ -1,5 +1,6 @@
 class projects::ledej {
   include dnsmasq
+  include git
   include heroku
   include redis
   include postgresql
@@ -104,6 +105,35 @@ class projects::ledej {
     ensure => present,
     provider => pip,
   }
+
+  ##
+  # Git flow 
+
+  exec { "git-flow init":
+    cwd       => $project_dir,
+    command   => "git flow init -d",
+    require   => [
+      Package['boxen/brews/git'],
+      Repository[$project_dir],
+    ],
+  }
+
+  git::config::local { "git-flow config branch master":
+    repo  => $project_dir,
+    key   => "gitflow.branch.master",
+    value => "master",
+    require => Exec["git-flow init"],
+  }
+
+  git::config::local { "git-flow config branch develop":
+    repo  => $project_dir,
+    key   => "gitflow.branch.develop",
+    value => "develop",
+    require => Exec["git-flow init"],
+  }
+
+  ## 
+  # Project
 
   boxen::project { $project_name:
     # dotenv        => true,
