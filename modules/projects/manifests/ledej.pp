@@ -20,17 +20,23 @@ class projects::ledej {
   $venv_name = 'ledej'
 
   python::mkvirtualenv{ $venv_name:
-    require     => Package['python'],
-    ensure      => present,
     systempkgs  => false,
     distribute  => true,
     project_dir => $project_dir,
+    require     => [
+      Package['python'],
+      Repository[$project_dir],
+    ],
+    ensure      => present,
   }
 
   python::requirements { 'reqs-dev':
     requirements => "${project_dir}/reqs/dev.txt",
     virtualenv   => $venv_name,
-    require      => Package['libjpeg'],
+    require      => [
+      Package['libjpeg'],
+      Repository[$project_dir],
+    ]
   }
 
   # Homebrew packages
@@ -108,7 +114,8 @@ class projects::ledej {
     source        => 'Ledej/ledej-website',
     require       => [
       Package['libjpeg'],
+      Package['git-flow'],
       Service['postgresql'],
-    ]
+    ], 
   }
 }
