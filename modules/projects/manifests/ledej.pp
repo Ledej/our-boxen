@@ -59,10 +59,10 @@ class projects::ledej {
   }
 
   # Default Ruby version
-  class { 'ruby::global': version => '1.9.3' }
+  $ruby_version = "1.9.3"
+  class { 'ruby::global': version => $ruby_version }
 
   # Gem packages
-  $ruby_version = "1.9.3"
   ruby::gem { 'kicker for ${ruby_version}':
     gem     => 'kicker',
     ruby    => $ruby_version,
