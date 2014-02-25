@@ -114,6 +114,7 @@ class projects::ledej {
     command   => "git flow init -d",
     require   => [
       Package['boxen/brews/git'],
+      Package['git-flow'],
       Repository[$project_dir],
     ],
   }
