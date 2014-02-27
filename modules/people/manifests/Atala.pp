@@ -1,4 +1,4 @@
-class people::Atala {
+class people::atala {
   include alfred
   include chrome
   include dropbox
