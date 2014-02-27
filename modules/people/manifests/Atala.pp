@@ -63,7 +63,7 @@ class people::atala {
   include osx::disable_app_quarantine
   include osx::no_network_dsstores
 
-  include osx::global::natural_mouse_scrolling
+  # include osx::global::natural_mouse_scrolling
    class { 'osx::global::natural_mouse_scrolling':
      enabled => false
    }
