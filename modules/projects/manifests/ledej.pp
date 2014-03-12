@@ -5,6 +5,7 @@ class projects::ledej {
   include redis
   include postgresql
   include elasticsearch
+  include memcached::lib
   include python
   include python::virtualenvwrapper
   include nodejs
@@ -109,29 +110,29 @@ class projects::ledej {
   ##
   # Git flow 
 
-  exec { "git-flow init":
-    cwd       => $project_dir,
-    command   => "git flow init -d",
-    require   => [
-      Package['boxen/brews/git'],
-      Package['git-flow'],
-      Repository[$project_dir],
-    ],
-  }
+  # exec { "git-flow init":
+  #   cwd       => $project_dir,
+  #   command   => "git flow init -d",
+  #   require   => [
+  #     Package['boxen/brews/git'],
+  #     Package['git-flow'],
+  #     Repository[$project_dir],
+  #   ],
+  # }
 
-  git::config::local { "git-flow config branch master":
-    repo  => $project_dir,
-    key   => "gitflow.branch.master",
-    value => "master",
-    require => Exec["git-flow init"],
-  }
+  # git::config::local { "git-flow config branch master":
+  #   repo  => $project_dir,
+  #   key   => "gitflow.branch.master",
+  #   value => "master",
+  #   require => Exec["git-flow init"],
+  # }
 
-  git::config::local { "git-flow config branch develop":
-    repo  => $project_dir,
-    key   => "gitflow.branch.develop",
-    value => "develop",
-    require => Exec["git-flow init"],
-  }
+  # git::config::local { "git-flow config branch develop":
+  #   repo  => $project_dir,
+  #   key   => "gitflow.branch.develop",
+  #   value => "develop",
+  #   require => Exec["git-flow init"],
+  # }
 
   ## 
   # Project
