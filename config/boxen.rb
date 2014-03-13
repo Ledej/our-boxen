@@ -10,7 +10,7 @@ ENV['BOXEN_REPO_NAME'] = 'Ledej/our-boxen'
 # Boxen binary packaging
 # ENV["BOXEN_S3_ACCESS_KEY"] = ''
 # ENV["BOXEN_S3_SECRET_KEY"] = ''
-# ENV["BOXEN_S3_BUCKET"] = ''
+ENV["BOXEN_S3_BUCKET"] = 'ledej-boxen-downloads'
 
 # Auto-report issues on failed runs
 ENV["BOXEN_ISSUES_ENABLED"] = 'yes'
