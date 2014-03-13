@@ -5,7 +5,7 @@ class projects::ledej {
   include redis
   include postgresql
   include elasticsearch
-  include memcached::lib
+  # include memcached::lib
   include python
   include python::virtualenvwrapper
   include nodejs

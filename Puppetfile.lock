@@ -26,7 +26,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-boxen
   specs:
-    boxen (3.3.4)
+    boxen (3.3.8)
 
 GITHUBTARBALL
   remote: boxen/puppet-chrome
@@ -86,7 +86,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
-    homebrew (1.5.1)
+    homebrew (1.6.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-hub
@@ -146,7 +146,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-ruby
   specs:
-    ruby (6.7.2)
+    ruby (7.1.6)
 
 GITHUBTARBALL
   remote: boxen/puppet-sublime_text_2
@@ -176,17 +176,22 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
   specs:
-    inifile (1.0.0)
+    inifile (1.0.1)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-stdlib
   specs:
     stdlib (4.1.0)
 
+GITHUBTARBALL
+  remote: ripienaar/puppet-module-data
+  specs:
+    module-data (0.0.1)
+
 DEPENDENCIES
   alfred (= 1.1.7)
   appcleaner (= 1.0.0)
-  boxen (= 3.3.4)
+  boxen (= 3.3.8)
   chrome (= 1.1.2)
   cyberduck (= 1.0.1)
   dnsmasq (= 1.0.0)
@@ -199,11 +204,12 @@ DEPENDENCIES
   go (= 1.0.0)
   heroku (= 2.1.1)
   hipchat (= 1.1.0)
-  homebrew (= 1.5.1)
+  homebrew (= 1.6.0)
   hub (= 1.0.3)
-  inifile (= 1.0.0)
+  inifile (= 1.0.1)
   java (= 1.1.2)
   memcached (= 1.4.1)
+  module-data (= 0.0.1)
   nginx (= 1.4.2)
   nodejs (= 3.3.0)
   openssl (= 1.0.0)
@@ -214,7 +220,7 @@ DEPENDENCIES
   python (= 1.3.0)
   redis (= 2.1.0)
   repository (= 2.2.0)
-  ruby (= 6.7.2)
+  ruby (= 7.1.6)
   stdlib (= 4.1.0)
   sublime_text_2 (= 1.1.2)
   sudo (= 1.0.0)
