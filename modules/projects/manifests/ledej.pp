@@ -37,6 +37,8 @@ class projects::ledej {
     virtualenv   => $venv_name,
     require      => [
       Package['libjpeg'],
+      # Package['boxen/brews/libmemcached'],
+      Package['libmemcached'],
       Repository[$project_dir],
     ]
   }
@@ -54,6 +56,7 @@ class projects::ledej {
       'htop-osx',
       'go',
       'python',
+      'libmemcached',
       # 'redis',
     ]:
     ensure => present,
