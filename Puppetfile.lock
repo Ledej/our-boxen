@@ -4,9 +4,9 @@ GITHUBTARBALL
     git (1.3.7.1)
 
 GITHUBTARBALL
-  remote: Ledej/puppet-python-2.7.4
+  remote: Ledej/puppet-python
   specs:
-    python (1.3.0)
+    python (1.4.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-alfred
@@ -217,7 +217,7 @@ DEPENDENCIES
   phantomjs (= 2.1.0)
   pkgconfig (= 1.0.0)
   postgresql (= 2.2.2)
-  python (= 1.3.0)
+  python (= 1.4.0)
   redis (= 2.1.0)
   repository (= 2.3.0)
   ruby (= 7.1.6)
