@@ -97,18 +97,19 @@ class projects::ledej {
 
   # Python packages
   package { 'numpy':
-    ensure => present,
-    provider => pip,
-  }
-  package {
-    [
-      'virtualenv',
-      'virtualenvwrapper',
-    ]:
     require => Package['python'],
     ensure => present,
     provider => pip,
   }
+  # package {
+  #   [
+  #     'virtualenv',
+  #     'virtualenvwrapper',
+  #   ]:
+  #   require => Package['python'],
+  #   ensure => present,
+  #   provider => pip,
+  # }
 
   ##
   # Git flow 
@@ -145,11 +146,11 @@ class projects::ledej {
     elasticsearch => true,
     postgresql    => true,
     redis         => true,
-    # python        => '2.7.4',
     source        => 'Ledej/ledej-website',
     require       => [
       Package['libjpeg'],
       Package['git-flow'],
+      Package['python'],
       Service['postgresql'],
     ], 
   }
