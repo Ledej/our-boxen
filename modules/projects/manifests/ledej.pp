@@ -11,13 +11,6 @@ class projects::ledej {
   include ruby
   include nodejs
 
-  # extra
-  include chrome
-  include firefox
-  include hipchat
-  include dropbox
-  include cyberduck
-
   $project_name = 'ledej'
   $project_dir = "${boxen::config::srcdir}/${project_name}"
   $venv_name = 'ledej'

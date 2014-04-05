@@ -88,4 +88,8 @@ node default {
     ensure => link,
     target => $boxen::config::repodir
   }
+
+  ##
+  # Ledej
+  include ledej::environment
 }
