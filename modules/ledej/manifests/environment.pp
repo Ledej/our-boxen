@@ -1,5 +1,4 @@
 class ledej::environment {
-  include osx
   include ledej::apps::mac
 
   # OS X stuffs
