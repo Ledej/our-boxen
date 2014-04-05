@@ -8,6 +8,7 @@ class projects::ledej {
   # include memcached::lib
   include python
   include python::virtualenvwrapper
+  include ruby
   include nodejs
 
   # extra
@@ -62,26 +63,22 @@ class projects::ledej {
     ensure => present,
   }
 
-  # Default Ruby version
-  $ruby_version = "1.9.3"
-  class { 'ruby::global': version => $ruby_version }
-
   # Gem packages
-  ruby::gem { 'kicker for ${ruby_version}':
+  ruby::gem { 'kicker for ${ruby::global::version}':
     gem     => 'kicker',
-    ruby    => $ruby_version,
+    ruby    => ruby::global::version,
     version => '~> 3.0.0',
     ensure  => present,
   }
-  ruby::gem { 'foreman for ${ruby_version}':
+  ruby::gem { 'foreman for ${ruby::global::version}':
     gem     => 'foreman',
-    ruby    => $ruby_version,
+    ruby    => ruby::global::version,
     version => '~> 0.63.0',
     ensure  => present,
   }
-  ruby::gem { 'sass for ${ruby_version}':
+  ruby::gem { 'sass for ${ruby::global::version}':
     gem     => 'sass',
-    ruby    => $ruby_version,
+    ruby    => ruby::global::version,
     version => '~> 3.2.13',
     ensure  => present,
   }
