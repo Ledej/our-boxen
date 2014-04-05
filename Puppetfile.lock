@@ -1,12 +1,52 @@
 GITHUBTARBALL
+  remote: Ledej/puppet-python
+  specs:
+    python (1.3.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-alfred
+  specs:
+    alfred (1.1.7)
+
+GITHUBTARBALL
+  remote: boxen/puppet-appcleaner
+  specs:
+    appcleaner (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-boxen
   specs:
     boxen (3.4.2)
 
 GITHUBTARBALL
+  remote: boxen/puppet-chrome
+  specs:
+    chrome (1.1.2)
+
+GITHUBTARBALL
+  remote: boxen/puppet-cyberduck
+  specs:
+    cyberduck (1.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-dropbox
+  specs:
+    dropbox (1.2.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-elasticsearch
+  specs:
+    elasticsearch (2.1.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-firefox
+  specs:
+    firefox (1.1.5)
 
 GITHUBTARBALL
   remote: boxen/puppet-foreman
@@ -29,6 +69,16 @@ GITHUBTARBALL
     go (1.1.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-heroku
+  specs:
+    heroku (2.1.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-hipchat
+  specs:
+    hipchat (1.1.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
     homebrew (1.6.1)
@@ -37,6 +87,16 @@ GITHUBTARBALL
   remote: boxen/puppet-hub
   specs:
     hub (1.3.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-java
+  specs:
+    java (1.1.2)
+
+GITHUBTARBALL
+  remote: boxen/puppet-memcached
+  specs:
+    memcached (1.4.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-nginx
@@ -54,6 +114,11 @@ GITHUBTARBALL
     openssl (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-osx
+  specs:
+    osx (2.2.2)
+
+GITHUBTARBALL
   remote: boxen/puppet-phantomjs
   specs:
     phantomjs (2.1.0)
@@ -62,6 +127,16 @@ GITHUBTARBALL
   remote: boxen/puppet-pkgconfig
   specs:
     pkgconfig (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-postgresql
+  specs:
+    postgresql (2.2.2)
+
+GITHUBTARBALL
+  remote: boxen/puppet-redis
+  specs:
+    redis (2.1.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-repository
@@ -74,9 +149,24 @@ GITHUBTARBALL
     ruby (7.2.4)
 
 GITHUBTARBALL
+  remote: boxen/puppet-sublime_text_2
+  specs:
+    sublime_text_2 (1.1.2)
+
+GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-sysctl
+  specs:
+    sysctl (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-vlc
+  specs:
+    vlc (1.0.5)
 
 GITHUBTARBALL
   remote: boxen/puppet-xquartz
@@ -99,24 +189,42 @@ GITHUBTARBALL
     module-data (0.0.3)
 
 DEPENDENCIES
+  alfred (= 1.1.7)
+  appcleaner (= 1.0.0)
   boxen (= 3.4.2)
+  chrome (= 1.1.2)
+  cyberduck (= 1.0.1)
   dnsmasq (= 1.0.1)
+  dropbox (= 1.2.0)
+  elasticsearch (= 2.1.0)
+  firefox (= 1.1.5)
   foreman (= 1.2.0)
   gcc (= 2.0.100)
   git (= 2.2.2)
   go (= 1.1.0)
+  heroku (= 2.1.1)
+  hipchat (= 1.1.0)
   homebrew (= 1.6.1)
   hub (= 1.3.0)
   inifile (= 1.0.3)
+  java (= 1.1.2)
+  memcached (= 1.4.0)
   module-data (= 0.0.3)
   nginx (= 1.4.3)
   nodejs (= 3.7.0)
   openssl (= 1.0.0)
+  osx (= 2.2.2)
   phantomjs (= 2.1.0)
   pkgconfig (= 1.0.0)
+  postgresql (= 2.2.2)
+  python (= 1.3.1)
+  redis (= 2.1.0)
   repository (= 2.3.0)
   ruby (= 7.2.4)
   stdlib (= 4.1.0)
+  sublime_text_2 (= 1.1.2)
   sudo (= 1.0.0)
+  sysctl (= 1.0.0)
+  vlc (= 1.0.5)
   xquartz (= 1.1.1)
 

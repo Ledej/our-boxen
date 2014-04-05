@@ -31,7 +31,6 @@ class projects::ledej {
     virtualenv   => $venv_name,
     require      => [
       Package['libjpeg'],
-      # Package['boxen/brews/libmemcached'],
       Package['libmemcached'],
       Repository[$project_dir],
     ]
@@ -51,7 +50,6 @@ class projects::ledej {
       'go',
       'python',
       'libmemcached',
-      # 'redis',
     ]:
     ensure => present,
   }
@@ -91,46 +89,8 @@ class projects::ledej {
     ensure => present,
     provider => pip,
   }
-  # package {
-  #   [
-  #     'virtualenv',
-  #     'virtualenvwrapper',
-  #   ]:
-  #   require => Package['python'],
-  #   ensure => present,
-  #   provider => pip,
-  # }
 
-  ##
-  # Git flow 
-
-  # exec { "git-flow init":
-  #   cwd       => $project_dir,
-  #   command   => "git flow init -d",
-  #   require   => [
-  #     Package['boxen/brews/git'],
-  #     Package['git-flow'],
-  #     Repository[$project_dir],
-  #   ],
-  # }
-
-  # git::config::local { "git-flow config branch master":
-  #   repo  => $project_dir,
-  #   key   => "gitflow.branch.master",
-  #   value => "master",
-  #   require => Exec["git-flow init"],
-  # }
-
-  # git::config::local { "git-flow config branch develop":
-  #   repo  => $project_dir,
-  #   key   => "gitflow.branch.develop",
-  #   value => "develop",
-  #   require => Exec["git-flow init"],
-  # }
-
-  ## 
   # Project
-
   boxen::project { $project_name:
     # dotenv        => true,
     elasticsearch => true,
