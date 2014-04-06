@@ -25,16 +25,16 @@ class projects::ledej {
     ensure      => present,
   }
 
-  python::requirements { 'reqs-dev':
-    requirements => "${project_dir}/reqs/dev.txt",
-    upgrade      => true,
-    virtualenv   => $venv_name,
-    require      => [
-      Package['jpeg'],
-      Package['libmemcached'],
-      Repository[$project_dir],
-    ]
-  }
+  # python::requirements { 'reqs-dev':
+  #   requirements => "${project_dir}/reqs/dev.txt",
+  #   # upgrade      => true,
+  #   virtualenv   => $venv_name,
+  #   require      => [
+  #     Package['jpeg'],
+  #     Package['libmemcached'],
+  #     Repository[$project_dir],
+  #   ]
+  # }
 
   python::pip { 'numpy':
     ensure     => present,
