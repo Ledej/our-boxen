@@ -3,6 +3,7 @@ class people::dulaccc {
 
   include alfred
   include git
+  include ohmyzsh
 
 
   $home = "/Users/${::boxen_user}"
