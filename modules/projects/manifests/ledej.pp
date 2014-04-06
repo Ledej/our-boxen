@@ -54,22 +54,25 @@ class projects::ledej {
     ensure => present,
   }
 
+  # Ruby
+  $ruby_version = hiera('ruby::global::version')
+
   # Gem packages
-  ruby::gem { 'kicker for ${ruby::global::version}':
+  ruby::gem { "kicker for ${ruby_version}":
     gem     => 'kicker',
-    ruby    => ruby::global::version,
+    ruby    => $ruby_version,
     version => '~> 3.0.0',
     ensure  => present,
   }
-  ruby::gem { 'foreman for ${ruby::global::version}':
+  ruby::gem { "foreman for ${ruby_version}":
     gem     => 'foreman',
-    ruby    => ruby::global::version,
+    ruby    => $ruby_version,
     version => '~> 0.63.0',
     ensure  => present,
   }
-  ruby::gem { 'sass for ${ruby::global::version}':
+  ruby::gem { "sass for ${ruby_version}":
     gem     => 'sass',
-    ruby    => ruby::global::version,
+    ruby    => $ruby_version,
     version => '~> 3.2.13',
     ensure  => present,
   }
