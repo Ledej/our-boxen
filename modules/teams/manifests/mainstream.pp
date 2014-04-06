@@ -3,6 +3,16 @@ class teams::mainstream {
   include projects::ledej
 
 
+  # Default tools
+  package {
+    [
+      'git-flow',
+      'htop-osx',
+      'go',
+    ]:
+    ensure => present,
+  }
+
   # Default dotfiles
   $srcdir = "${boxen::config::srcdir}"
   $dotfiles = "${srcdir}/default-dotfiles"

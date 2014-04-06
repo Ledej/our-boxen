@@ -50,12 +50,7 @@ class projects::ledej {
   }
   package {
     [
-      'rabbitmq',
       'jpeg',
-      'git-flow',
-      'htop-osx',
-      'go',
-      'python',
       'libmemcached',
     ]:
     ensure => present,
