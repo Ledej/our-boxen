@@ -48,4 +48,6 @@ class people::dulaccc {
   # class { 'osx::global::natural_mouse_scrolling':
   #   enabled => false
   # }
+  include osx::global::disable_autocorrect
+  include osx::finder::enable_quicklook_text_selection
 }
