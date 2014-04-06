@@ -57,6 +57,9 @@ class projects::ledej {
 
   # Ruby
   $ruby_version = hiera('ruby::global::version')
+  ruby::local { $project_dir:
+    version => $ruby_version
+  }
 
   # Gem packages
   ruby::gem { "kicker for ${ruby_version}":
