@@ -1,5 +1,4 @@
 class projects::ledej {
-  include dnsmasq
   include git
   include heroku
   include redis
