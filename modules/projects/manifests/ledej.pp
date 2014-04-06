@@ -19,7 +19,7 @@ class projects::ledej {
     distribute  => true,
     project_dir => $project_dir,
     require     => [
-      Package['python'],
+      Package['boxen/brews/python'],
       Repository[$project_dir],
     ],
     ensure      => present,
@@ -39,7 +39,7 @@ class projects::ledej {
   python::pip { 'numpy':
     ensure     => present,
     virtualenv => $python::config::global_venv,
-    require    => Package['python'],
+    require    => Package['boxen/brews/python'],
   }
 
   # Homebrew packages
@@ -97,7 +97,7 @@ class projects::ledej {
     require       => [
       Package['jpeg'],
       Package['git-flow'],
-      Package['python'],
+      Package['boxen/brews/python'],
       Service['postgresql'],
     ], 
   }
