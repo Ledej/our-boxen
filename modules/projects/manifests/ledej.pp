@@ -28,23 +28,30 @@ class projects::ledej {
 
   python::requirements { 'reqs-dev':
     requirements => "${project_dir}/reqs/dev.txt",
+    upgrade      => true,
     virtualenv   => $venv_name,
     require      => [
-      Package['libjpeg'],
+      Package['jpeg'],
       Package['libmemcached'],
       Repository[$project_dir],
     ]
   }
 
+  python::pip { 'numpy':
+    ensure     => present,
+    virtualenv => $python::config::global_venv,
+    require    => Package['python'],
+  }
+
   # Homebrew packages
   package { 'gdal':
-    require => Package['numpy'],
-    ensure => present,
+    ensure  => present,
+    require => Exec['pip_install_numpy'],
   }
   package {
     [
       'rabbitmq',
-      'libjpeg',
+      'jpeg',
       'git-flow',
       'htop-osx',
       'go',
@@ -86,13 +93,6 @@ class projects::ledej {
   #   node_version => 'v0.10'
   # }
 
-  # Python packages
-  package { 'numpy':
-    require => Package['python'],
-    ensure => present,
-    provider => pip,
-  }
-
   # Project
   boxen::project { $project_name:
     # dotenv        => true,
@@ -101,7 +101,7 @@ class projects::ledej {
     redis         => true,
     source        => 'Ledej/ledej-website',
     require       => [
-      Package['libjpeg'],
+      Package['jpeg'],
       Package['git-flow'],
       Package['python'],
       Service['postgresql'],
