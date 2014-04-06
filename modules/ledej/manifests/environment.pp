@@ -1,6 +1,15 @@
 class ledej::environment {
   include ledej::apps::mac
 
+  # Remove services we don't want
+  service { 
+    [
+      'dev.nginx',
+      'dev.dnsmasq',
+    ]:
+    ensure => "stopped",
+  }
+
   # OS X stuffs
   osx::recovery_message { 'Si vous trouvez ce Mac, appelez le 06 67 20 77 93': }
   include osx::finder::show_external_hard_drives_on_desktop
