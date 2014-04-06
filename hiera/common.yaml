@@ -12,6 +12,9 @@ ruby::global::version: "2.1.0"
 ruby::version::alias:
   2.0.0: 2.0.0-p353
 
+# See https://github.com/boxen/puppet-nodejs for docs
+nodejs::global::version: "v0.10.14"
+
 # See https://github.com/Ledej/puppet-python
 # TODO
 # python::global::version: "2.7.6"

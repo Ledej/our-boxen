@@ -78,13 +78,9 @@ class projects::ledej {
     ensure  => present,
   }
 
-  # Default NodeJS version
-  include nodejs::v0_10
-  class { 'nodejs::global': version => 'v0.10' }
-
   # Node packages
   # nodejs::module { 'sass':
-  #   node_version => 'v0.10'
+  #   node_version => hiera('nodejs::global::version')
   # }
 
   # Project
