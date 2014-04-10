@@ -82,9 +82,9 @@ class projects::ledej {
   }
 
   # Node packages
-  # nodejs::module { 'sass':
-  #   node_version => hiera('nodejs::global::version')
-  # }
+  nodejs::module { 'autoprefixer':
+    node_version => hiera('nodejs::global::version')
+  }
 
   # Project
   boxen::project { $project_name:
