@@ -82,8 +82,9 @@ class projects::ledej {
   }
 
   # Node packages
+  $nodejs_version = hiera('nodejs::global::version')
   nodejs::module { 'autoprefixer':
-    node_version => hiera('nodejs::global::version')
+    node_version => $nodejs_version
   }
 
   # Project
