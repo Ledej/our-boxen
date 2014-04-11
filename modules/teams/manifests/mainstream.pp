@@ -1,6 +1,7 @@
 class teams::mainstream {
   # Devops™
   include projects::ledej
+  include projects::dashboard
 
 
   # Default tools
