@@ -51,6 +51,7 @@ class projects::ledej {
     [
       'jpeg',
       'libmemcached',
+      'chromedriver',
     ]:
     ensure => present,
   }
