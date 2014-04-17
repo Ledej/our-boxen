@@ -10,7 +10,8 @@ class projects::dashboard {
   # Ruby
   $ruby_version = hiera('ruby::global::version')
   ruby::local { $project_dir:
-    version => $ruby_version
+    version => $ruby_version,
+    require => Repository[$project_dir],
   }
 
   # Gem packages
@@ -25,5 +26,9 @@ class projects::dashboard {
   $nodejs_version = hiera('nodejs::global::version')
   nodejs::module { 'yo':
     node_version => $nodejs_version
+  }
+
+  repository { $project_dir:
+    source => "Ledej/${project_name}"
   }
 }
