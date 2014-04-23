@@ -14,6 +14,13 @@ class teams::mainstream {
     ensure => present,
   }
 
+  $ruby_version = hiera('ruby::global::version')
+  ruby::gem { "git-up for ${ruby_version}":
+    gem     => 'git-up',
+    ruby    => $ruby_version,
+    ensure  => present,
+  }
+
   # Default dotfiles
   $srcdir = "${boxen::config::srcdir}"
   $dotfiles = "${srcdir}/default-dotfiles"
