@@ -59,7 +59,8 @@ class projects::ledej {
   # Ruby
   $ruby_version = hiera('ruby::global::version')
   ruby::local { $project_dir:
-    version => $ruby_version
+    version => $ruby_version,
+    require => Repository[$project_dir],
   }
 
   # Gem packages
