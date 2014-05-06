@@ -56,7 +56,7 @@ node default {
   # core modules, needed for most things
   include git
   include hub
-  # include dnsmasq
+  include dnsmasq
   # include nginx
 
   # fail if FDE is not enabled

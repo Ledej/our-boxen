@@ -5,7 +5,6 @@ class ledej::environment {
   service { 
     [
       'dev.nginx',
-      'dev.dnsmasq',
     ]:
     ensure => "stopped",
   }
