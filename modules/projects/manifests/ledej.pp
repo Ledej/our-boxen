@@ -76,10 +76,10 @@ class projects::ledej {
     version => '~> 0.63.0',
     ensure  => present,
   }
-  ruby::gem { "sass for ${ruby_version}":
+  ruby::gem { "sass 3.3.0alpha for ${ruby_version}":
     gem     => 'sass',
     ruby    => $ruby_version,
-    version => '~> 3.2.13',
+    version => '>=3.3.0alpha',
     ensure  => present,
   }
 
