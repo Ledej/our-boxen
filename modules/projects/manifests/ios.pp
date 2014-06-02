@@ -20,6 +20,14 @@ class projects::ios {
     ensure  => present,
   }
 
+  # Debug tools
+  package {
+    [
+      'chisel',
+    ]:
+    ensure => present,
+  }
+
   repository { $project_dir:
     source => "Ledej/${project_name}"
   }
