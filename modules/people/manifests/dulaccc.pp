@@ -1,5 +1,6 @@
 class people::dulaccc {
   include teams::mainstream
+  include projects::ios
 
   include alfred
   include git
