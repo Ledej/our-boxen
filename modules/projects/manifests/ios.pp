@@ -19,6 +19,12 @@ class projects::ios {
     version => '~> 0.33.1',
     ensure  => present,
   }
+  ruby::gem { "xcpretty for ${ruby_version}":
+    gem     => 'xcpretty',
+    ruby    => $ruby_version,
+    version => '~> 0.1.5',
+    ensure  => present,
+  }
 
   # Debug tools
   package {
