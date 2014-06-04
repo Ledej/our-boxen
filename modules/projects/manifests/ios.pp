@@ -26,9 +26,10 @@ class projects::ios {
     ensure  => present,
   }
 
-  # Debug tools
+  # Dev tools
   package {
     [
+      'mogenerator',
       'chisel',
     ]:
     ensure => present,
