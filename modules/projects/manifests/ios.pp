@@ -25,6 +25,12 @@ class projects::ios {
     version => '~> 0.1.5',
     ensure  => present,
   }
+  ruby::gem { "synx for ${ruby_version}":
+    gem     => 'synx',
+    ruby    => $ruby_version,
+    version => '~> 0.0.5',
+    ensure  => present,
+  }
 
   # Dev tools
   package {
