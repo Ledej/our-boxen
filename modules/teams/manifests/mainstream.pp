@@ -15,10 +15,10 @@ class teams::mainstream {
   }
 
   $ruby_version = hiera('ruby::global::version')
-  ruby::gem { "git-up for ${ruby_version}":
-    gem     => 'git-up',
-    ruby    => $ruby_version,
-    ensure  => present,
+  ruby_gem { "git-up for ${ruby_version}":
+    gem          => 'git-up',
+    ruby_version => $ruby_version,
+    ensure       => present,
   }
 
   # Default dotfiles

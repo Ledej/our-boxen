@@ -15,11 +15,11 @@ class projects::dashboard {
   }
 
   # Gem packages
-  ruby::gem { "compass for ${ruby_version}":
-    gem     => 'compass',
-    ruby    => $ruby_version,
-    version => '~> 0.12.5',
-    ensure  => present,
+  ruby_gem { "compass for ${ruby_version}":
+    gem          => 'compass',
+    ruby_version => $ruby_version,
+    version      => '~> 0.12.5',
+    ensure       => present,
   }
 
   # Node packages

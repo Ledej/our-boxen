@@ -64,23 +64,23 @@ class projects::ledej {
   }
 
   # Gem packages
-  ruby::gem { "kicker for ${ruby_version}":
-    gem     => 'kicker',
-    ruby    => $ruby_version,
-    version => '~> 3.0.0',
-    ensure  => present,
+  ruby_gem { "kicker for ${ruby_version}":
+    gem          => 'kicker',
+    ruby_version => $ruby_version,
+    version      => '~> 3.0.0',
+    ensure       => present,
   }
-  ruby::gem { "foreman for ${ruby_version}":
-    gem     => 'foreman',
-    ruby    => $ruby_version,
-    version => '~> 0.63.0',
-    ensure  => present,
+  ruby_gem { "foreman for ${ruby_version}":
+    gem          => 'foreman',
+    ruby_version => $ruby_version,
+    version      => '~> 0.63.0',
+    ensure       => present,
   }
-  ruby::gem { "sass 3.3.0alpha for ${ruby_version}":
-    gem     => 'sass',
-    ruby    => $ruby_version,
-    version => '>=3.3.0alpha',
-    ensure  => present,
+  ruby_gem { "sass 3.3.0alpha for ${ruby_version}":
+    gem          => 'sass',
+    ruby_version => $ruby_version,
+    version      => '>=3.3.0alpha',
+    ensure       => present,
   }
 
   # Node packages

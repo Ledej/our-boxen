@@ -13,23 +13,23 @@ class projects::ios {
   }
 
   # Gem packages
-  ruby::gem { "cocoapods for ${ruby_version}":
-    gem     => 'cocoapods',
-    ruby    => $ruby_version,
-    version => '~> 0.33.1',
-    ensure  => present,
+  ruby_gem { "cocoapods for ${ruby_version}":
+    gem          => 'cocoapods',
+    ruby_version => $ruby_version,
+    version      => '~> 0.33.1',
+    ensure       => present,
   }
-  ruby::gem { "xcpretty for ${ruby_version}":
-    gem     => 'xcpretty',
-    ruby    => $ruby_version,
-    version => '~> 0.1.5',
-    ensure  => present,
+  ruby_gem { "xcpretty for ${ruby_version}":
+    gem          => 'xcpretty',
+    ruby_version => $ruby_version,
+    version      => '~> 0.1.5',
+    ensure       => present,
   }
-  ruby::gem { "synx for ${ruby_version}":
-    gem     => 'synx',
-    ruby    => $ruby_version,
-    version => '~> 0.0.5',
-    ensure  => present,
+  ruby_gem { "synx for ${ruby_version}":
+    gem          => 'synx',
+    ruby_version => $ruby_version,
+    version      => '~> 0.0.5',
+    ensure       => present,
   }
 
   # Dev tools
